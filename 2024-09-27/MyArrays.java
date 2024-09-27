@@ -10,7 +10,7 @@ public class MyArrays {
   }
 
   public static int[] returnCopy(int[] ary) {
-    
+
   }
 
   public static int[] concatArray(int[] ary1, int[] ary2) {
@@ -23,8 +23,8 @@ public class MyArrays {
     System.out.println(arrayToString(testArray) == arrayToString(newArray)
                         && testArray != newArray);
 
-    int[] testArray = new int {};
-    int[] newArray = returnCopy(testArray);
+    testArray = new int {};
+    newArray = returnCopy(testArray);
     System.out.println(arrayToString(testArray) == arrayToString(newArray)
                         && testArray != newArray);
 
