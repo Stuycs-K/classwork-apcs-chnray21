@@ -1,7 +1,7 @@
 public class MyArrays {
   public static String arrayToString(int[] nums) {
-    string ans = "[";
-    for (int i-0; i<nums.length; i++) {
+    String ans = "[";
+    for (int i=0; i<nums.length; i++) {
       ans += nums[i];
       ans = ans + ", ";
     }
@@ -20,16 +20,17 @@ public class MyArrays {
   }
 
   public static int[] concatArray(int[] ary1, int[] ary2) {
-
+    int[] result = new int[0];
+    return result;
   }
 
   public static void main(String[] args) {
-    int[] testArray = new int {1, 2, 3, 4};
+    int[] testArray = new int[] {1, 2, 3, 4};
     int[] newArray = returnCopy(testArray);
     System.out.println(arrayToString(testArray) == arrayToString(newArray)
                         && testArray != newArray);
 
-    testArray = new int {};
+    testArray = new int[0];
     newArray = returnCopy(testArray);
     System.out.println(arrayToString(testArray) == arrayToString(newArray)
                         && testArray != newArray);
