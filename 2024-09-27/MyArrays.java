@@ -63,6 +63,15 @@ public class MyArrays {
         System.out.println(arrayToString(testArray).equals(arrayToString(newArray))
                 && testArray != newArray);
 
+        testArray = new int[] {1000};
+        newArray = returnCopy(testArray);
+        System.out.println(arrayToString(testArray).equals(arrayToString(newArray))
+                && testArray != newArray);
+
+        testArray = new int[] {-2135, 325, -53};
+        newArray = returnCopy(testArray);
+        System.out.println(arrayToString(testArray).equals(arrayToString(newArray))
+                && testArray != newArray);
         
         // test cases for concatArray
         int[] arr1 = new int[] {1, 2, 3, 4};
@@ -76,5 +85,13 @@ public class MyArrays {
         arr1 = new int[5];
         arr2 = new int[5];
         System.out.println("Expected [0, 0, 0, 0, 0, 0, 0, 0, 0, 0] result: " + arrayToString(concatArray(arr1, arr2)));
+
+        arr1 = new int[] {5};
+        arr2 = new int[] {10000};
+        System.out.println("Expected [5, 10000] result: " + arrayToString(concatArray(arr1, arr2)));
+
+        arr1 = new int[] {-5, 231, -732, 4};
+        arr2 = new int[] {2135, -35, -1230, 32, 32};
+        System.out.println("Expected [-5, 231, -732, 4, 2135, -35, -1230, 32, 32] result: " + arrayToString(concatArray(arr1, arr2)));
     }
 }
