@@ -105,5 +105,8 @@ public class ArrayMethods {
         // swapRC test cases
         testCase2 = new int[][] {{1, 2, 3}, {4, 5, 6}};
         System.out.println("Expected: [[1, 4], [2, 5], [3, 6]], result: " + arrToString(swapRC(testCase2)));
+
+        testCase2 = new int[][] {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}, {10, 11, 12}, {13, 14, 15}};
+        System.out.println("Expected: [[1, 4, 7, 10, 13], [2, 5, 8, 11, 14], [3, 6, 9, 12, 15]], result: " + arrToString(swapRC(testCase2)));
     }
 }
