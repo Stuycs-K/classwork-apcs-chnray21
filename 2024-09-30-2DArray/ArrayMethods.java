@@ -159,6 +159,12 @@ public class ArrayMethods {
         System.out.println("Expected: [[1, 4, 7, 10, 13], [2, 5, 8, 11, 14], [3, 6, 9, 12, 15]], result: "
                 + arrToString(swapRC(testCase2)));
 
+        testCase2 = new int[5][1];
+        System.out.println("Expected: [[0, 0, 0, 0, 0]], result: " + arrToString(swapRC(testCase2)));
+
+
+        // replaceNegative test cases
+
         testCase2 = new int[][] { { -1, 2, -3 }, { 4, 5 }, { -6 }, { 7, 8, -9, -10 } };
         replaceNegative(testCase2);
         System.out.println("Expected: [[1, 2, 0], [4, 5], [0], [7, 8, 0, 1]], result: " + arrToString(testCase2));
@@ -171,6 +177,13 @@ public class ArrayMethods {
         replaceNegative(testCase2);
         System.out.println("Expected [[1, 0, 2, 10, 0], [0, 0, 0, 0, 0]], result: " + arrToString(testCase2));
 
+        testCase2 = new int[][] {{0}, {-1, 0}, {-4, -3, 0}, {-12, -10, -12, 0}};
+        replaceNegative(testCase2);
+        System.out.println("Expected [[0], [0, 0], [0, 0, 0], [0, 0, 0, 0]], result: " + arrToString(testCase2));
+
+
+        // Copy test cases
+
         testCase2 = new int[][] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 } };
         int[][] copiedTest = copy(testCase2);
         System.out.println("Expected [[1, 2, 3, 4, 5], [6, 7, 8, 9, 10]], result: " + arrToString(copiedTest));
@@ -179,6 +192,26 @@ public class ArrayMethods {
 
         copiedTest = copy(testCase2);
         System.out.println("Expected [[1, 2], [3, 4, 5, 6], [0]], result: " + arrToString(copiedTest));
+        testCase2 = new int[][] {{}};
+        System.out.println("Original string has been changed. Is the copy still the same? " + arrToString(copiedTest));
+
+        copiedTest = copy(testCase2);
+        System.out.println("Expected [[]], result: " + arrToString(copiedTest));
+        testCase2 = new int[][] {{0}};
+        System.out.println("Original string has been changed. Is the copy still the same? " + arrToString(copiedTest));
+
+        copiedTest = copy(testCase2);
+        System.out.println("Expected [[0]], result: " + arrToString(copiedTest));
+        testCase2 = new int[3][4];
+        System.out.println("Original string has been changed. Is the copy still the same? " + arrToString(copiedTest));
+
+        copiedTest = copy(testCase2);
+        System.out.println("Expected [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], result: " + arrToString(copiedTest));
+        testCase2 = new int[][] {{1, -2}, {-10}};
+        System.out.println("Original string has been changed. Is the copy still the same? " + arrToString(copiedTest));
+
+        copiedTest = copy(testCase2);
+        System.out.println("Expected [[1, -2], [-10]], result: " + arrToString(copiedTest));
         testCase2 = new int[][] {{}};
         System.out.println("Original string has been changed. Is the copy still the same? " + arrToString(copiedTest));
 
