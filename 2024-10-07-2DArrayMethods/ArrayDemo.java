@@ -5,19 +5,43 @@ public class ArrayDemo{
     //You can now use Arrays.toString(yourArray) instead of writing arrayToString again.
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
+    int[] testArray = new int[] {1, 2, 3, 4};
+    System.out.println(Arrays.toString(testArray).equals(arrToString(testArray)));
+
+    int[][] testArray2 = new int[][] {{1, 2}, {3, 4}, {5}};
+    System.out.println(Arrays.deepToString(testArray2).equals(arrToString(testArray2)));
 
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
   public static String arrToString(int[]ary){
-    return "";
+    String ans = "[";
+    if (ary == null) {
+        return "null";
+    }
+    for (int i = 0; i < ary.length; i++) {
+        if (i != ary.length - 1) {
+            ans += ary[i];
+            ans = ans + ", ";
+        } else {
+            ans += ary[i];
+        }
+    }
+    return ans + "]";
   }
 
   //The name of different methods can be the same,
   //as long as the parameters are different! (type and/or quantity must be different)
   //Pro tip: you should be using your 1D arrToString in this method!
   public static String arrToString(int[][]ary){
-    return "";
+    String ans2 = "[";
+    for (int i = 0; i < ary.length; i++) {
+        ans2 += arrToString(ary[i]);
+        if (i < ary.length - 1) {
+            ans2 += ", ";
+        }
+    }
+    return ans2 + "]";
   }
 
   //1. Calculate and return how many elements equal zero in the 2D array.
