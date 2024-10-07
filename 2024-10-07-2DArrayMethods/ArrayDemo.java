@@ -8,7 +8,13 @@ public class ArrayDemo{
     int[] testArray = new int[] {1, 2, 3, 4};
     System.out.println(Arrays.toString(testArray).equals(arrToString(testArray)));
 
+    testArray = new int[] {};
+    System.out.println(Arrays.toString(testArray).equals(arrToString(testArray)));
+
     int[][] testArray2 = new int[][] {{1, 2}, {3, 4}, {5}};
+    System.out.println(Arrays.deepToString(testArray2).equals(arrToString(testArray2)));
+
+    testArray2 = new int[2][3];
     System.out.println(Arrays.deepToString(testArray2).equals(arrToString(testArray2)));
 
   }
