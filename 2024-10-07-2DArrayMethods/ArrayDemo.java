@@ -18,11 +18,18 @@ public class ArrayDemo{
     System.out.println(Arrays.deepToString(testArray2).equals(arrToString(testArray2)));
      */
 
+    // countZeros test cases
     int[][] testArray = new int[3][5];
     System.out.println("Expected: 15    Result: " + countZeros2D(testArray));
 
     testArray = new int[][] {{1, 2}, {0, 9, 1235, 0}, {0, 1}, {123, 63 , 19}};
     System.out.println("Expected: 3    Result: " + countZeros2D(testArray));
+
+    // arrSum test cases
+    System.out.println("Expected: 1453    Result: " + arr2DSum(testArray));
+
+    testArray = new int[5][3];
+    System.out.println("Expected: 0    Result: " + arr2DSum(testArray));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -72,8 +79,14 @@ public class ArrayDemo{
   //2. Calculate the sum of a 2d array
   /*Return the sum of all of the values in the 2D array
    *Use a nested loop instead of a helper method*/
-  public static int arr2DSum(int[][]nums){
-    return 0;
+  public static int arr2DSum(int[][]nums) {
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        sum += nums[i][j];
+      }
+    }
+    return sum;
   }
 
   //3. Modify a given 2D array of integer as follows:
@@ -82,7 +95,7 @@ public class ArrayDemo{
   //that negative with the value 1
   //-All other negatives replace with 0
   public static void replaceNegative(int[][] vals){
-
+    
   }
 
   //4. Make a copy of the given 2d array.
