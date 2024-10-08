@@ -30,6 +30,11 @@ public class ArrayDemo{
 
     testArray = new int[5][3];
     System.out.println("Expected: 0    Result: " + arr2DSum(testArray));
+
+    // replaceNegative test cases
+    testArray = new int[][] {{-1, 0, 5}, {-53}, {0, 2, -3, -7}};
+    replaceNegative(testArray);
+    System.out.println("Expected: [[1, 0, 5], [0], [0, 2, 1, 0]]     Result: " + arrToString(testArray));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -95,7 +100,16 @@ public class ArrayDemo{
   //that negative with the value 1
   //-All other negatives replace with 0
   public static void replaceNegative(int[][] vals){
-    
+    for (int i = 0; i < vals.length; i++) {
+      for (int j = 0; j < vals[i].length; j++) {
+        if (vals[i][j] < 0 && i == j) {
+          vals[i][j] = 1;
+        }
+        else if (vals[i][j] < 0) {
+          vals[i][j] = 0;
+        }
+      }
+    }
   }
 
   //4. Make a copy of the given 2d array.
@@ -104,14 +118,41 @@ public class ArrayDemo{
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return new int[1][1];
+    int[][] result = new int[nums.length][];
+
+    for (int i = 0; i < nums.length; i++) {
+      result[i] = returnCopy(nums[i]);
+    }
+
+    return result;
+  }
+
+  public static int[] returnCopy(int[] ary) {
+    // makes a new int[] aryCopy, which is then filled with
+    // the values from ary
+    int[] aryCopy = new int[ary.length];
+
+    for (int i = 0; i < ary.length; i++) {
+      aryCopy[i] = ary[i];
+    }
+
+    return aryCopy;
   }
 
   //5. Rotate an array by returning a new array with the rows and columns swapped.
   //   You may assume the array is rectangular and neither rows nor cols is 0.
   //   e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    // take nums and swap the length of nums and nums[0]
+    int[][] result = new int[nums[0].length][nums.length];
+    // get the first element of each sub-array in nums
+    // and make it the elements in the first sub-array in result
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[0].length; j++) {
+        result[j][i] += nums[i][j];
+      }
+    }
+    return result;
   }
 
   //6. Make an HTML table by putting a table tag around the entire 2d array,
