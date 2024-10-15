@@ -44,5 +44,15 @@ public class Demo{
     System.out.println(distance(c, cc) + " = 0?");
     System.out.println(Point.distance(b, aa) + " = 10.63?");
     System.out.println(bb.distanceTo(a) + " = 10.63?");
+
+    System.out.println("Equilateral Triangle Test");
+
+    Point v1 = new Point(0.5, 0);
+    Point v2 = new Point(-0.5, 0);
+    Point v3 = new Point(0, 0.5*Math.sqrt(3));
+
+    System.out.println("From v1 to v2:" + distance(v1, v2));
+    System.out.println("From v2 to v3:" + distance(v2, v3));
+    System.out.println("From v3 to v1:" + distance(v1, v3));
   }
 }
