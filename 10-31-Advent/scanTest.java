@@ -18,6 +18,9 @@ public class scanTest {
     try {
       File file = new File("scanTest.java");//1
       Scanner input = new Scanner(file);
+      while (input.hasNext()) {
+        System.out.println(input.nextLine());
+      }
       //CODE THAT SCANS THE FILE.
       input.close();//releases the file from your program
 
