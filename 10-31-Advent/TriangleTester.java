@@ -48,10 +48,13 @@ public class TriangleTester {
 
       Scanner input2 = new Scanner(myFile);
       while (input2.hasNextLine()) {
+        input2.nextInt();
         int a = input2.nextInt();
         input2.nextLine();
+        input2.nextInt();
         int b = input2.nextInt();
         input2.nextLine();
+        input2.nextInt();
         int c = input2.nextInt();
         input2.nextLine();
         if (a+b>c && a+c>b && c+b>a) {
@@ -70,7 +73,7 @@ public class TriangleTester {
   }
 
   public static void main(String[] args) {
-    System.out.println(countTrianglesA("inputTri.txt"));
+    // System.out.println(countTrianglesA("inputTri.txt"));
     System.out.println(countTrianglesB("inputTri.txt"));
   }
 }
