@@ -15,25 +15,49 @@ public class scanTest {
     // }
     // System.out.println(sum);
 
+    // Print every other line
+    // try {
+    //   File file = new File("scanTest.java");//1
+    //   //CODE THAT SCANS THE FILE.
+    //   Scanner input = new Scanner(file); 
+    //   int lineNum = 0;
+    //   while (input.hasNextLine()) {
+    //     if (lineNum%2==0) {
+    //       System.out.println(input.nextLine());
+    //       lineNum++;
+    //     }
+    //     else {
+    //       input.nextLine();
+    //       System.out.println(" ");
+    //       lineNum++;
+    //     }
+    //   }
+    //   input.close();//releases the file from your program
+
+    // } catch (FileNotFoundException ex) {
+    //   //File not found what should you do?
+    //   System.out.println("File not found");
+    //   return; //you can return from a void function just don't put a value.
+    // }
+
+    // Print only lines that contain a '{'
     try {
       File file = new File("scanTest.java");//1
       //CODE THAT SCANS THE FILE.
       Scanner input = new Scanner(file); 
-      int lineNum = 0;
+      String str;
+
       while (input.hasNextLine()) {
-        if (lineNum%2==0) {
-          System.out.println(input.nextLine());
-          lineNum++;
-        }
-        else {
-          input.nextLine();
-          System.out.println(" ");
-          lineNum++;
+        str = input.nextLine();
+        if (str.contains("{")) {
+          System.out.println(str);          
         }
       }
-      input.close();//releases the file from your program
 
-    } catch (FileNotFoundException ex) {
+      input.close();//releases the file from your program
+    } 
+
+    catch (FileNotFoundException ex) {
       //File not found what should you do?
       System.out.println("File not found");
       return; //you can return from a void function just don't put a value.
