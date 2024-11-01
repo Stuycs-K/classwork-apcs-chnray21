@@ -46,7 +46,21 @@ public class TriangleTester {
         }
       }
 
+      Scanner input2 = new Scanner(myFile);
+      while (input2.hasNextLine()) {
+        int a = input2.nextInt();
+        input2.nextLine();
+        int b = input2.nextInt();
+        input2.nextLine();
+        int c = input2.nextInt();
+        input2.nextLine();
+        if (a+b>c && a+c>b && c+b>a) {
+          num++;
+        }
+      }
+
       input.close();
+      input2.close();
       return num;
     }
     catch (FileNotFoundException ex) {
