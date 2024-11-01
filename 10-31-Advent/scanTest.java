@@ -17,11 +17,20 @@ public class scanTest {
 
     try {
       File file = new File("scanTest.java");//1
-      Scanner input = new Scanner(file);
-      while (input.hasNext()) {
-        System.out.println(input.nextLine());
-      }
       //CODE THAT SCANS THE FILE.
+      Scanner input = new Scanner(file); 
+      int lineNum = 0;
+      while (input.hasNextLine()) {
+        if (lineNum%2==0) {
+          System.out.println(input.nextLine());
+          lineNum++;
+        }
+        else {
+          input.nextLine();
+          System.out.println(" ");
+          lineNum++;
+        }
+      }
       input.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
