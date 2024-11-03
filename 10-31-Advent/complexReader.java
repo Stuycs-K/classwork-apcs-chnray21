@@ -31,6 +31,10 @@ public class complexReader {
   public static void main(String[] args) {
     System.out.println(reader("sepX.txt"));
 
-    
+    ArrayList<Integer>myArray = new ArrayList<Integer>();
+    myArray.add(1);
+    myArray.add(2);
+    myArray.add(3);
+    System.out.println(myArray);
   }
 }
