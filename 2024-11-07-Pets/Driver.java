@@ -1,5 +1,6 @@
 public class Driver {
   public static void main(String[] args) {
-    System.out.println('Hello World!');
+    Animal Bob = new Animal("meow", 2909, "Cthulu the Destroyer");
+    Bob.speak();
   }
  }
