@@ -5,6 +5,9 @@ public class Bird extends Animal {
 
   //4.
   public Bird(String noise, int age, String name, double height, String color){
+    super(noise, age, name);
+    this.height = height;
+    this.color = color;
     //In order to construct the Bird you must first call the superclass constructor
     //This is done by saying: super(parameters)
     //e.g. super("Doug",10,"Squaaaak!");
