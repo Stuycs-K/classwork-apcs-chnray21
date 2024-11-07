@@ -25,7 +25,11 @@ public class Bird extends Animal {
     I am ? inches tall
   */
   //You can call the old method using super.speak();
-  //public void speak(){}
+  public void speak(){
+    super.speak();
+    System.out.println("My feathers are colored " + this.color + ".");
+    System.out.println("I am " + this.height + " inches tall.");
+  }
 
 
 
