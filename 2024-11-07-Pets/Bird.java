@@ -16,26 +16,27 @@ public class Bird extends Animal {
 
 
   //6.Override the speak() method.
-  /*WITHOUT REPEATING CODE:
-  print the following message replacing the ? with name/age/noise/color/height:
-    My name is ?.
-    I am ? years old.
-    I say ?.
-    My feathers are colored ?
-    I am ? inches tall
-  */
-  //You can call the old method using super.speak();
   public void speak(){
+    /*WITHOUT REPEATING CODE:
+    print the following message replacing the ? with name/age/noise/color/height:
+      My name is ?.
+      I am ? years old.
+      I say ?.
+      My feathers are colored ?
+      I am ? inches tall
+    */
+    //You can call the old method using super.speak();
     super.speak();
     System.out.println("My feathers are colored " + this.color + ".");
     System.out.println("I am " + this.height + " inches tall.");
   }
 
-
-
-  //7:Override the getName() method so that a bid's name is "The Mighty NAME" instead of "NAME"
+  //7:Override the getName() method so that a bird's name is "The Mighty NAME" instead of "NAME"
   //e.g. "The Mighty Polly" instead of just "Polly"
   //You can call the superclass' getName method using the syntax: super.getName()
+  public String getName() {
+    return ("The Mighty " + super.getName());
+  }
 
   //Step 8:In Driver.java answer: What is the difference before and after you override this method?
   //What does this tell us about methods that are overridden?
