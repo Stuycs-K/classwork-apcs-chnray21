@@ -1,6 +1,9 @@
 /*
  * The name did not change for the Animal.speak(), but it changed for the Bird.speak()
  */
+/*
+ * Assigning an Animal variable to a bird type doesn't work because Animal is not a child of Bird (Animal is-not-a Bird)
+ */
 public class Driver {
   public static void main(String[] args) {
     // Animal Bob = new Animal("meow", 2909, "Bob");
@@ -16,7 +19,6 @@ public class Driver {
 
     // Bird b2 = new Animal("caw", 1, "Crow");
     // b2.speak();
-    // Doesn't work because Animal is not a child of Bird
 
     Animal a2 = new Bird ("caw", 1, "Crow", 6, "black");
     a2.speak();
