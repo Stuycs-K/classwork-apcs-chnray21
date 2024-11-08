@@ -10,15 +10,15 @@ public class Animal {
   }
 
   //2.
-  /*speak() should print the following message replacing
-  the ?'s with name/age/noise:
-  My name is ?.
-  I am ? years old.
-  I say ?.
-
-  Note: you MUST use getName() getNoise() here! You will see why later.
-  */
   public void speak(){
+    /*speak() should print the following message replacing
+    the ?'s with name/age/noise:
+    My name is ?.
+    I am ? years old.
+    I say ?.
+
+    Note: you MUST use getName() getNoise() here! You will see why later.
+    */
     System.out.println("My name is " + getName() + ".");
     System.out.println("I am " + this.age + " years old.");
     System.out.println("I say " + getNoise() + ".");
