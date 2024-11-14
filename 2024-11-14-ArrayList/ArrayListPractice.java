@@ -5,7 +5,6 @@ public class ArrayListPractice {
     ArrayList<String>result = new ArrayList<String>(size);
     for (int i = 0; i<size; i++) {
       int num = (int)(10*Math.random());
-      System.out.println(num);
       if (num == 0) {
         result.add(i, "");
       }
