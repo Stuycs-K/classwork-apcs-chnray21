@@ -21,4 +21,12 @@ public class ArrayListPractice {
       }
     }
   }
+
+  public static ArrayList<String>makeReversedList(ArrayList<String>original) {
+    ArrayList<String>result = new ArrayList<String>(original.size());
+    for (int i = original.size() - 1; i >= 0; i--) {
+      result.add(i, original.get(i));
+    }
+    return result;
+  }
 }
