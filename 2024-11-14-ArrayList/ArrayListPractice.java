@@ -14,4 +14,13 @@ public class ArrayListPractice {
     }
     return result;
   }
+  public static void replaceEmpty(ArrayList<String>original) {
+    for (int i = 0; i <original.size(); i++) {
+      if (original.get(i).equals("")) {
+        System.out.println(original.get(i));
+        System.out.println(i);
+        original.set(i, "Empty");
+      }
+    }
+  }
 }
