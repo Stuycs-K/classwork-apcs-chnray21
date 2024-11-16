@@ -11,9 +11,13 @@ public class Main {
     // System.out.println(ArrayListPractice.createRandomArray(100000));
 
     // replaceEmpty() tests
-    // ArrayList<String> test = ArrayListPractice.createRandomArray(200000);
-    // ArrayListPractice.replaceEmpty(test);
-    // System.out.println(test);
+    // ArrayList<String>smallTest = ArrayListPractice.createRandomArray(25);
+    // ArrayList<String> bigTest = ArrayListPractice.createRandomArray(200000);
+    // ArrayListPractice.replaceEmpty(smallTest);
+
+    // ArrayListPractice.replaceEmpty(bigTest);
+    // // System.out.println(smallTest);
+    // System.out.println(bigTest);
 
     // makeReversedList tests
     // ArrayList<String> tester = ArrayListPractice.createRandomArray(5);
