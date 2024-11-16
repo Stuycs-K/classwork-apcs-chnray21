@@ -42,9 +42,13 @@ public class ArrayListPractice {
     int sumSize = a.size() + b.size();
     ArrayList<String>result = new ArrayList<String>(sumSize);
 
-    for (int i = 0; i<Math.min(a.size(), b.size()); i++) {
-      result.add(a.get(i));
-      result.add(b.get(i));
+    for (int i = 0; i<Math.max(a.size(), b.size()); i++) {
+      if (i<a.size()) {
+        result.add(a.get(i));
+      }
+      if (i<b.size()) {
+        result.add(b.get(i));
+      }
     }
 
     return result;
