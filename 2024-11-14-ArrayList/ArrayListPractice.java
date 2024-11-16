@@ -42,8 +42,11 @@ public class ArrayListPractice {
     int sumSize = a.size() + b.size();
     ArrayList<String>result = new ArrayList<String>(sumSize);
 
-    System.out.println(sumSize);
-    return result;
+    for (int i = 0; i<Math.min(a.size(), b.size()); i++) {
+      result.add(a.get(i));
+      result.add(b.get(i));
+    }
 
+    return result;
   }
 }

@@ -30,6 +30,8 @@ public class Main {
     // mixLists tests
     ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
     ArrayList<String>tester2 = ArrayListPractice.createRandomArray(7);
+    System.out.println(tester);
+    System.out.println(tester2);
     System.out.println(ArrayListPractice.mixLists(tester, tester2));
   }
 }
