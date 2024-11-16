@@ -33,5 +33,15 @@ public class Main {
     System.out.println(tester);
     System.out.println(tester2);
     System.out.println(ArrayListPractice.mixLists(tester, tester2));
+
+    ArrayList<String>smallTester = ArrayListPractice.createRandomArray(9);
+    ArrayList<String>bigTester = ArrayListPractice.createRandomArray(51);
+    System.out.println(smallTester);
+    System.out.println(bigTester);
+    System.out.println(ArrayListPractice.mixLists(smallTester, bigTester));
+
+    ArrayList<String>obscenelyLarge = ArrayListPractice.createRandomArray(2158946);
+    ArrayList<String>obscenelyLarger = ArrayListPractice.createRandomArray(1000000);
+    ArrayListPractice.mixLists(obscenelyLarge, obscenelyLarger);
   }
 }
