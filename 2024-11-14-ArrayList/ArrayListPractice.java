@@ -6,7 +6,7 @@ public class ArrayListPractice {
     for (int i = 0; i<size; i++) {
       int num = (int)(10*Math.random());
       if (num == 0) {
-        result.add(i, "");
+        result.add(i, ""); 
       }
       else {
         result.add(i, ""+num);
