@@ -20,11 +20,16 @@ public class Main {
     // System.out.println(bigTest);
 
     // makeReversedList tests
+    // ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
+    // ArrayList<String>tester2 = ArrayListPractice.createRandomArray(25);
+    // ArrayList<String>bigTester = ArrayListPractice.createRandomArray(100000);
+    // System.out.println("Original: " + tester + "   Result: " + ArrayListPractice.makeReversedList(tester));
+    // System.out.println("Original: " + tester2 + "   Result: " + ArrayListPractice.makeReversedList(tester2));
+    // ArrayListPractice.makeReversedList(bigTester);
+
+    // mixLists tests
     ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
-    ArrayList<String>tester2 = ArrayListPractice.createRandomArray(25);
-    ArrayList<String>bigTester = ArrayListPractice.createRandomArray(100000);
-    System.out.println("Original: " + tester + "   Result: " + ArrayListPractice.makeReversedList(tester));
-    System.out.println("Original: " + tester2 + "   Result: " + ArrayListPractice.makeReversedList(tester2));
-    ArrayListPractice.makeReversedList(bigTester);
+    ArrayList<String>tester2 = ArrayListPractice.createRandomArray(7);
+    System.out.println(ArrayListPractice.mixLists(tester, tester2));
   }
 }
