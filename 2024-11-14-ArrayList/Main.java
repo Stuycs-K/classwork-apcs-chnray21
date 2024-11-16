@@ -24,6 +24,7 @@ public class Main {
     // System.out.println(bigTest);
 
     // makeReversedList tests
+    System.out.println(ArrayListPractice.makeReversedList(zeroList));
     // ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
     // ArrayList<String>tester2 = ArrayListPractice.createRandomArray(25);
     // ArrayList<String>bigTester = ArrayListPractice.createRandomArray(100000);
@@ -32,6 +33,10 @@ public class Main {
     // ArrayListPractice.makeReversedList(bigTester);
 
     // mixLists tests
+    ArrayList<String>zeroList2 = ArrayListPractice.createRandomArray(0);
+    ArrayList<String>nonZeroList = ArrayListPractice.createRandomArray(2);
+    System.out.println(ArrayListPractice.mixLists(zeroList, zeroList2));
+    System.out.println(ArrayListPractice.mixLists(zeroList, nonZeroList));
     // ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
     // ArrayList<String>tester2 = ArrayListPractice.createRandomArray(7);
     // System.out.println(tester);
