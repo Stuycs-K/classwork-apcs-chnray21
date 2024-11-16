@@ -4,6 +4,7 @@ public class Main {
   public static void main(String[] args) {
 
     // createRandomArray() tests
+    System.out.println(ArrayListPractice.createRandomArray(0));
     // System.out.println(ArrayListPractice.createRandomArray(5));
     // System.out.println(ArrayListPractice.createRandomArray(25));
     // System.out.println(ArrayListPractice.createRandomArray(50));
@@ -11,6 +12,9 @@ public class Main {
     // System.out.println(ArrayListPractice.createRandomArray(100000));
 
     // replaceEmpty() tests
+    ArrayList<String>zeroList = ArrayListPractice.createRandomArray(0);
+    ArrayListPractice.replaceEmpty(zeroList);
+    System.out.println(zeroList);
     // ArrayList<String>smallTest = ArrayListPractice.createRandomArray(25);
     // ArrayList<String> bigTest = ArrayListPractice.createRandomArray(200000);
     // ArrayListPractice.replaceEmpty(smallTest);
@@ -28,20 +32,20 @@ public class Main {
     // ArrayListPractice.makeReversedList(bigTester);
 
     // mixLists tests
-    ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
-    ArrayList<String>tester2 = ArrayListPractice.createRandomArray(7);
-    System.out.println(tester);
-    System.out.println(tester2);
-    System.out.println(ArrayListPractice.mixLists(tester, tester2));
+    // ArrayList<String>tester = ArrayListPractice.createRandomArray(5);
+    // ArrayList<String>tester2 = ArrayListPractice.createRandomArray(7);
+    // System.out.println(tester);
+    // System.out.println(tester2);
+    // System.out.println(ArrayListPractice.mixLists(tester, tester2));
 
-    ArrayList<String>smallTester = ArrayListPractice.createRandomArray(9);
-    ArrayList<String>bigTester = ArrayListPractice.createRandomArray(51);
-    System.out.println(smallTester);
-    System.out.println(bigTester);
-    System.out.println(ArrayListPractice.mixLists(smallTester, bigTester));
+    // ArrayList<String>smallTester = ArrayListPractice.createRandomArray(9);
+    // ArrayList<String>bigTester = ArrayListPractice.createRandomArray(51);
+    // System.out.println(smallTester);
+    // System.out.println(bigTester);
+    // System.out.println(ArrayListPractice.mixLists(smallTester, bigTester));
 
-    ArrayList<String>obscenelyLarge = ArrayListPractice.createRandomArray(2158946);
-    ArrayList<String>obscenelyLarger = ArrayListPractice.createRandomArray(1000000);
-    ArrayListPractice.mixLists(obscenelyLarge, obscenelyLarger);
+    // ArrayList<String>obscenelyLarge = ArrayListPractice.createRandomArray(2158946);
+    // ArrayList<String>obscenelyLarger = ArrayListPractice.createRandomArray(1000000);
+    // ArrayListPractice.mixLists(obscenelyLarge, obscenelyLarger);
   }
 }
