@@ -20,9 +20,11 @@ public class day2 {
 
         for (int i=0; i<command.length(); i++) {
           if (command.substring(i, i+1).equals("U")) {
+            // need to make sure keypad is not at 1, 2, or 3
             value=value-3;
           }
           else if (command.substring(i, i+1).equals("R")) {
+            // make sure keypad is not at 3, 6, or 9
             value=value+1;
           }
           else if (command.substring(i, i+1).equals("D")) {
