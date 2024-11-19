@@ -7,9 +7,20 @@ public class day1 {
     try {
       File myFile = new File(filename);
       Scanner input = new Scanner(myFile);
-      String[] direction = input.nextLine().split(", ");
-      for (int i =0; i<direction.length; i++) {
-        System.out.println(direction[i]);
+      String[] directions = input.nextLine().split(", ");
+      // Split each "travel command" into individual elements in an array
+
+      int nsew = 1;
+      // 1 = north, 2 = east, 3 = south, 4 = west
+
+      for (int i =0; i<directions.length; i++) {
+        // System.out.println(direction[i]);
+        String nsewTemp = directions[i].substring(0, 1);
+        int forward = Integer.parseInt(directions[i].substring(1));
+        // get the direction and how much to travel forwards
+        System.out.println(nsewTemp + ", " + forward);
+
+        // add or subtract the value
       }
 
       int result = 0;
