@@ -20,12 +20,13 @@ public class day1 {
         int forward = Integer.parseInt(directions[i].substring(1));
 
         // +1 or -1 to nsew depending on if direction is R or L
-        if (nsewTemp == "R") {
+        if (nsewTemp.equals("R")) {
           nsew++;
         }
         else {
           nsew--;
         }
+        System.out.println(nsew);
 
         // change nsew to fit the the range of values from 1 to 4 
         // if it is not there
@@ -45,6 +46,7 @@ public class day1 {
       }
 
       input.close();
+      System.out.println(" ");
       return result;
     }
     catch (FileNotFoundException ex) {
