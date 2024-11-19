@@ -18,8 +18,19 @@ public class day2 {
       while (input.hasNextLine()) {
         String command = input.nextLine();
 
-        for (int i=0; i<1; i++) {
-          System.out.println(command.substring(i, i+1));
+        for (int i=0; i<command.length(); i++) {
+          if (command.substring(i, i+1).equals("U")) {
+            value=value-3;
+          }
+          else if (command.substring(i, i+1).equals("R")) {
+            value=value+1;
+          }
+          else if (command.substring(i, i+1).equals("D")) {
+            value=value+3;
+          }
+          else if (command.substring(i, i+1).equals("L")) {
+            value=value-1;
+          }
         }
 
         result+=value;
