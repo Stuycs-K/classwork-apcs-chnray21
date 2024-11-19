@@ -12,12 +12,16 @@ public class day2 {
       // if down, add 3
       // if left, subtract 1
 
-      String result = "yippee";
+      String result = "";
       int value = 5;
 
       while (input.hasNextLine()) {
         String command = input.nextLine();
-        System.out.println(command);
+
+        for (int i=0; i<1; i++) {
+          System.out.println(command.substring(i, i+1));
+        }
+
         result+=value;
       }
 
