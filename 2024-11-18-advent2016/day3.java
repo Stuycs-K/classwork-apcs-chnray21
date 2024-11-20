@@ -40,8 +40,11 @@ public class day3 {
         // after this is done, will have arrays frequentLetter and frequency 
         // containing all letters and their corresponding frequencies
 
-        System.out.println(frequentLetter);
-        System.out.println(frequency);
+        String final5 = "";
+        // loop through frequency, finding the highest 5 numbers and their corresponding letters
+        for (int i=0; i<6; i++) {
+          
+        }
       }
 
       input.close();
