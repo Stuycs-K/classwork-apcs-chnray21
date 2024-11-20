@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-public class day3 {
+public class day4 {
   public static String fxn(String filename) {
     try {
       File myFile = new File(filename);
@@ -37,26 +37,29 @@ public class day3 {
             }
           }
         }
-        // after this is done, will have arrays frequentLetter and frequency 
+        // after this is done, will have arrays frequentLetter and frequency
         // containing all letters and their corresponding frequencies
+
+        System.out.println(frequentLetter);
+        System.out.println(frequency);
 
         String final5 = "";
         // loop through frequency, finding the highest 5 numbers and their corresponding letters
         for (int i=0; i<6; i++) {
-          
+
         }
       }
 
       input.close();
       return result;
     }
-    catch (FileNotFoundException ex){ 
+    catch (FileNotFoundException ex){
       System.out.println("File not found");
       return "invalid";
     }
   }
 
   public static void main(String[] args) {
-    System.out.println(fxn("inputDay3.txt"));
+    System.out.println(fxn("inputDay4.txt"));
   }
 }
