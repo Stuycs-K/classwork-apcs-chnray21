@@ -59,6 +59,15 @@ public class day4 {
     }
   }
 
+  public static int findLargest(ArrayList<Integer>nums) {
+    int value = 0;
+    for (int i=0; i<nums.size(); i++) {
+      if (nums.get(i) > value) {
+        value = nums.get(i);
+      }
+    }
+  }
+
   public static void main(String[] args) {
     System.out.println(fxn("inputDay4.txt"));
   }
