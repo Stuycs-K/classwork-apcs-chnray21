@@ -1,7 +1,6 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.ArrayList;
 
 public class day3 {
@@ -27,8 +26,9 @@ public class day3 {
             // check if frequentLetter contains the letter already
             // if yes, add 1 to the corresponding value in frequency
             // if no, add the letter to frequentLetter and set the value to 1
-            if (Arrays.asList(frequentLetter).contains(splitLine[i].substring(j, j+1))) {
-              int index = Arrays.asList(frequentLetter).indexOf(splitLine[i].substring(j, j+1));
+
+            if (frequentLetter.contains(splitLine[i].substring(j, j+1))) {
+              int index = frequentLetter.indexOf(splitLine[i].substring(j, j+1));
               frequency.set(index, frequency.get(index)+1);
             }
             else {
@@ -40,8 +40,8 @@ public class day3 {
         // after this is done, will have arrays frequentLetter and frequency 
         // containing all letters and their corresponding frequencies
 
-        // System.out.println(frequentLetter);
-        // System.out.println(frequency);
+        System.out.println(frequentLetter);
+        System.out.println(frequency);
       }
 
       input.close();
