@@ -18,7 +18,17 @@ public class day6 {
           char letter = line.charAt(i);
           alpha[letter - 'a'] = alpha[letter - 'a'] + 1;
         } 
-        
+        // loop through and get the index of the most common letter
+        int index = 0;
+        int max = 0;
+        for (int j=0; j<26;j++) {
+          if (alpha[j] > max) {
+            max = alpha[j];
+            index = j;
+          }
+        }
+        char frequentLetter = (char)('a'+index);
+        result+=frequentLetter;
       }
 
       input.close();
@@ -32,6 +42,6 @@ public class day6 {
   }
 
   public static void main(String[] args) {
-
+    System.out.println(fxn("inputDay6.txt"));
   }
 }
