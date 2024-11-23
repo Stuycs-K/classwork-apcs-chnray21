@@ -10,6 +10,17 @@ public class day6 {
       
       String result = "";
 
+      for (int i=0; i<8; i++) {
+        int[] alpha = new int[26];
+        // add in values of each letter in the alphabet for the column
+        while (input.hasNextLine()) {
+          String line = input.nextLine();
+          char letter = line.charAt(i);
+          alpha[letter - 'a'] = alpha[letter - 'a'] + 1;
+        } 
+        
+      }
+
       input.close();
       return result;
     }
