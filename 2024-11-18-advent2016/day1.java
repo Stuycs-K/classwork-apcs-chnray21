@@ -71,6 +71,7 @@ public class day1 {
       // 1 = north, 2 = east, 3 = south, 4 = west
       int result = 0;
       int[] coord  = new int[] {0, 0};
+      int[][] pastCoords = new int[10000000][2];
 
       for (int i =0; i<directions.length; i++) {
         // get the direction and how much to travel forwards
@@ -94,9 +95,12 @@ public class day1 {
           nsew = 1;
         }
 
+        // change direction and log in past coordinates
         if (nsew == 1) {
           result += forward;
+          for (int j=0; j<forward; i++) {
 
+          }
         }
         else if (nsew == 2) {
           result += forward;
@@ -108,7 +112,7 @@ public class day1 {
         }
         else {
           result -= forward;
-          
+
         }
       }
 
