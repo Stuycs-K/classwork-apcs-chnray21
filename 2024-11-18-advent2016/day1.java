@@ -73,8 +73,9 @@ public class day1 {
       int result = 0;
       int[] coord  = new int[] {0, 0};
       int[][] pastCoords = new int[10000000][2];
+      int coordNum = 0;
 
-      for (int i =0; i<directions.length; i++) {
+      for (int i =0; i<3; i++) {
         // get the direction and how much to travel forwards
         String nsewTemp = directions[i].substring(0, 1);
         int forward = Integer.parseInt(directions[i].substring(1));
@@ -98,24 +99,46 @@ public class day1 {
 
         // change direction and log in past coordinates
         if (nsew == 1) {
-          for (int j=0; j<forward; i++) {
-
+          for (int j=0; j<forward; j++) {
+            pastCoords[coordNum] = new int[] {coord[0], coord[1] + j};
+            coordNum++;
           }
+          coord = pastCoords[coordNum];
           result += forward;
         }
         else if (nsew == 2) {
+          for (int j=0; j<forward; j++) {
+            pastCoords[coordNum] = new int[] {coord[0] + j, coord[1]};
+            coordNum++;
+          }
+          coord = pastCoords[coordNum];
           result += forward;
-
         }
         else if (nsew == 3) {
+          for (int j=0; i<forward; j++) {
+            pastCoords[coordNum] = new int[] {coord[0], coord[1] - j};
+            coordNum++;
+          }
+          coord = pastCoords[coordNum];
           result -= forward;
 
         }
         else {
-          result -= forward;
+          for (int j=0; j<forward; j++) {
+            pastCoords[coordNum] = new int[] {coord[0] - j, coord[1]};
+            coordNum++;
+          }
+          coord = pastCoords[coordNum];
+          result -= forward; 
 
         }
       }
+
+      for (int x=0; x<coord.length; x++) {
+        System.out.println(coord[x]);
+      }
+      
+      System.out.println(coordNum);
 
       input.close();
       return Math.abs(result);
