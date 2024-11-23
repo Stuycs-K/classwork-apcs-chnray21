@@ -70,6 +70,7 @@ public class day1 {
       int nsew = 1;
       // 1 = north, 2 = east, 3 = south, 4 = west
       int result = 0;
+      int[] coord  = new int[] {0, 0};
 
       for (int i =0; i<directions.length; i++) {
         // get the direction and how much to travel forwards
@@ -112,6 +113,7 @@ public class day1 {
   }
 
   public static void main(String[] args) {
-    System.out.println(distance("inputDay1.txt"));
+    // System.out.println(distance("inputDay1.txt"));
+    System.out.println(firstPlaceTwice("inputDay1.txt"));
   }
 }
