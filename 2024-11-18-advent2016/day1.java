@@ -94,12 +94,21 @@ public class day1 {
           nsew = 1;
         }
 
+        if (nsew == 1) {
+          result += forward;
 
-        if (nsew == 1 || nsew == 2) {
-          result+=forward;
         }
-        else if (nsew == 3 || nsew == 4) {
-          result-=forward;
+        else if (nsew == 2) {
+          result += forward;
+
+        }
+        else if (nsew == 3) {
+          result -= forward;
+
+        }
+        else {
+          result -= forward;
+          
         }
       }
 
