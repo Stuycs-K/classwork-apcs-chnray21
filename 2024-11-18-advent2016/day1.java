@@ -1,6 +1,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Arrays;
 
 public class day1 {
   public static int distance(String filename) {
@@ -97,10 +98,10 @@ public class day1 {
 
         // change direction and log in past coordinates
         if (nsew == 1) {
-          result += forward;
           for (int j=0; j<forward; i++) {
 
           }
+          result += forward;
         }
         else if (nsew == 2) {
           result += forward;
@@ -125,6 +126,14 @@ public class day1 {
     }
   }
 
+  public static boolean isRepeat(int[] coord, int[][] pastCoords) {
+    for (int i=0; i<pastCoords.length; i++) {
+      if (Arrays.equals(coord, pastCoords[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
   public static void main(String[] args) {
     // System.out.println(distance("inputDay1.txt"));
     System.out.println(firstPlaceTwice("inputDay1.txt"));
