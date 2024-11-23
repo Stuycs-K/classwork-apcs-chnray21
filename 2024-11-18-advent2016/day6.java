@@ -10,28 +10,20 @@ public class day6 {
       
       String result = "";
 
-      for (int i=0; i<8; i++) {
+      for (int i=0; i<3; i++) {
         int[] alpha = new int[26];
         // add in values of each letter in the alphabet for the column
         while (input.hasNextLine()) {
           String line = input.nextLine();
           char letter = line.charAt(i);
+          System.out.println(letter);
           alpha[letter - 'a'] = alpha[letter - 'a'] + 1;
         } 
-        // loop through and get the index of the most common letter
-        int index = 0;
-        int max = 0;
-        for (int j=0; j<26;j++) {
-          if (alpha[j] > max) {
-            max = alpha[j];
-            index = j;
-          }
-        }
-        char frequentLetter = (char)('a'+index);
-        result+=frequentLetter;
+        System.out.println("end of this loop");
       }
 
       input.close();
+      System.out.println(" ");
       return result;
     }
 
