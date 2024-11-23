@@ -10,16 +10,29 @@ public class day6 {
       
       String result = "";
 
-      for (int i=0; i<3; i++) {
+      for (int i=0; i<1; i++) {
         int[] alpha = new int[26];
         // add in values of each letter in the alphabet for the column
         while (input.hasNextLine()) {
           String line = input.nextLine();
           char letter = line.charAt(i);
-          System.out.println(letter);
           alpha[letter - 'a'] = alpha[letter - 'a'] + 1;
         } 
-        System.out.println("end of this loop");
+        
+        int index = 0; // records the index of the highest frequency letter
+        int value = 0; // records the value of the highest frequency
+        // for loop to find the index of the most frequent letter
+        for (int j=0; j<alpha.length-1; j++) {
+          if (alpha[j] > value) {
+            index = j;
+            value = alpha[j];
+          }
+        }
+
+        System.out.println(index);
+        System.out.println(value);
+        // add the most frequent letter to result
+
       }
 
       input.close();
