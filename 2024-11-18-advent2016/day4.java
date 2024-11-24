@@ -1,7 +1,6 @@
 import java.io.File;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 
 public class day4 {
   public static String fxn(String filename) {
@@ -25,6 +24,19 @@ public class day4 {
             alpha[letter - 'a'] = alpha[letter - 'a'] + 1;
           }
         }
+
+        String record = "";
+        // find the indexes of the largest numbers
+        int index = 0; // records the index of the highest frequency letter
+        int value = 0; // records the value of the highest frequency
+        // for loop to find the index of the most frequent letter
+        for (int j=0; j<alpha.length-1; j++) {
+          if (alpha[j] > value) {
+            index = j;
+            value = alpha[j];
+          }
+        }
+        record += 'a'+index;
       }
 
       input.close();
