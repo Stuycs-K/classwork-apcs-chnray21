@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class day1 {
   public static int distance(String filename) {
@@ -71,11 +72,13 @@ public class day1 {
       int nsew = 1;
       // 1 = north, 2 = east, 3 = south, 4 = west
       int result = 0;
-      int[] coord  = new int[] {0, 0};
-      int[][] pastCoords = new int[10000000][2];
+      ArrayList<Integer>coord  = new ArrayList<Integer>(2);
+      coord.set(0, 0);
+      coord.set(1, 0);
+      ArrayList<int[]>pastCoords = new ArrayList<int[]>();
       int coordNum = 0;
 
-      for (int i =0; i<3; i++) {
+      for (int i =0; i<2; i++) {
         // get the direction and how much to travel forwards
         String nsewTemp = directions[i].substring(0, 1);
         int forward = Integer.parseInt(directions[i].substring(1));
@@ -98,47 +101,52 @@ public class day1 {
         }
 
         // change direction and log in past coordinates
+        // for each coordinate passed, adds it to the pastCoords array
+        // current coord is updated to the most recent pastCoords coordinate
         if (nsew == 1) {
           for (int j=0; j<forward; j++) {
-            pastCoords[coordNum] = new int[] {coord[0], coord[1] + j};
+            pastCoords.add(new int[] {coord.get(0), coord.get(1) + j});
             coordNum++;
           }
-          coord = pastCoords[coordNum];
+          coord.set(0, pastCoords.get(coordNum)[0]);
+          coord.set(1, pastCoords.get(coordNum)[1]);
           result += forward;
         }
         else if (nsew == 2) {
           for (int j=0; j<forward; j++) {
-            pastCoords[coordNum] = new int[] {coord[0] + j, coord[1]};
+            pastCoords.add(new int[] {coord.get(0) + j, coord.get(1)});
             coordNum++;
           }
-          coord = pastCoords[coordNum];
+          coord.set(0, pastCoords.get(coordNum)[0]);
+          coord.set(1, pastCoords.get(coordNum)[1]);
           result += forward;
         }
         else if (nsew == 3) {
-          for (int j=0; i<forward; j++) {
-            pastCoords[coordNum] = new int[] {coord[0], coord[1] - j};
+          for (int j=0; j<forward; j++) {
+            pastCoords.add(new int[] {coord.get(0), coord.get(1) - j});
             coordNum++;
           }
-          coord = pastCoords[coordNum];
+          coord.set(0, pastCoords.get(coordNum)[0]);
+          coord.set(1, pastCoords.get(coordNum)[1]);
           result -= forward;
 
         }
         else {
           for (int j=0; j<forward; j++) {
-            pastCoords[coordNum] = new int[] {coord[0] - j, coord[1]};
+            pastCoords.add(new int[] {coord.get(0) - j, coord.get(1)});
             coordNum++;
           }
-          coord = pastCoords[coordNum];
+          coord.set(0, pastCoords.get(coordNum)[0]);
+          coord.set(1, pastCoords.get(coordNum)[1]);
           result -= forward; 
 
         }
       }
 
-      for (int x=0; x<coord.length; x++) {
-        System.out.println(coord[x]);
-      }
-      
       System.out.println(coordNum);
+      for (int i=0; i<pastCoords.size(); i++) {
+        System.out.println(pastCoords.get(i));
+      }
 
       input.close();
       return Math.abs(result);
