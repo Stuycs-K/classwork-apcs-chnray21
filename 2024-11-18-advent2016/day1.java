@@ -78,7 +78,7 @@ public class day1 {
       ArrayList<int[]>pastCoords = new ArrayList<int[]>();
       int coordNum = -1;
 
-      for (int i =0; i<2; i++) {
+      for (int i =0; i<directions.length; i++) {
         // get the direction and how much to travel forwards
         String nsewTemp = directions[i].substring(0, 1);
         int forward = Integer.parseInt(directions[i].substring(1));
@@ -107,39 +107,49 @@ public class day1 {
           for (int j=0; j<forward; j++) {
             pastCoords.add(new int[] {coord.get(0), coord.get(1) + j});
             coordNum++;
+            result++;
+            coord.set(0, pastCoords.get(coordNum)[0]);
+            coord.set(1, pastCoords.get(coordNum)[1]);
+            if (isRepeat(coord, pastCoords)) {
+              return result;
+            }
           }
-          coord.set(0, pastCoords.get(coordNum)[0]);
-          coord.set(1, pastCoords.get(coordNum)[1]);
-          result += forward;
         }
         else if (nsew == 2) {
           for (int j=0; j<forward; j++) {
             pastCoords.add(new int[] {coord.get(0) + j, coord.get(1)});
             coordNum++;
+            result++;
+            coord.set(0, pastCoords.get(coordNum)[0]);
+            coord.set(1, pastCoords.get(coordNum)[1]);
+            if (isRepeat(coord, pastCoords)) {
+              return result;
+            }
           }
-          coord.set(0, pastCoords.get(coordNum)[0]);
-          coord.set(1, pastCoords.get(coordNum)[1]);
-          result += forward;
         }
         else if (nsew == 3) {
           for (int j=0; j<forward; j++) {
             pastCoords.add(new int[] {coord.get(0), coord.get(1) - j});
             coordNum++;
+            result--;
+            coord.set(0, pastCoords.get(coordNum)[0]);
+            coord.set(1, pastCoords.get(coordNum)[1]);
+            if (isRepeat(coord, pastCoords)) {
+              return result;
+            }
           }
-          coord.set(0, pastCoords.get(coordNum)[0]);
-          coord.set(1, pastCoords.get(coordNum)[1]);
-          result -= forward;
-
         }
         else {
           for (int j=0; j<forward; j++) {
             pastCoords.add(new int[] {coord.get(0) - j, coord.get(1)});
             coordNum++;
+            result--;
+            coord.set(0, pastCoords.get(coordNum)[0]);
+            coord.set(1, pastCoords.get(coordNum)[1]);
+            if (isRepeat(coord, pastCoords)) {
+              return result;
+            }
           }
-          coord.set(0, pastCoords.get(coordNum)[0]);
-          coord.set(1, pastCoords.get(coordNum)[1]);
-          result -= forward; 
-
         }
       }
 
@@ -158,7 +168,7 @@ public class day1 {
   }
 
   public static boolean isRepeat(ArrayList<Integer> coord, ArrayList<int[]> pastCoords) {
-    for (int i=0; i<pastCoords.size(); i++) {
+    for (int i=0; i<pastCoords.size()-2; i++) {
       if (coord.get(0) == pastCoords.get(i)[0] && coord.get(1)==pastCoords.get(i)[1]) {
         return true;
       }
