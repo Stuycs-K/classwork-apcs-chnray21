@@ -73,10 +73,10 @@ public class day1 {
       // 1 = north, 2 = east, 3 = south, 4 = west
       int result = 0;
       ArrayList<Integer>coord  = new ArrayList<Integer>(2);
-      coord.set(0, 0);
-      coord.set(1, 0);
+      coord.add(0, 0);
+      coord.add(1, 0);
       ArrayList<int[]>pastCoords = new ArrayList<int[]>();
-      int coordNum = 0;
+      int coordNum = -1;
 
       for (int i =0; i<2; i++) {
         // get the direction and how much to travel forwards
@@ -157,9 +157,9 @@ public class day1 {
     }
   }
 
-  public static boolean isRepeat(int[] coord, int[][] pastCoords) {
-    for (int i=0; i<pastCoords.length; i++) {
-      if (Arrays.equals(coord, pastCoords[i])) {
+  public static boolean isRepeat(ArrayList<Integer> coord, ArrayList<int[]> pastCoords) {
+    for (int i=0; i<pastCoords.size(); i++) {
+      if (coord.get(0) == pastCoords.get(i)[0] && coord.get(1)==pastCoords.get(i)[1]) {
         return true;
       }
     }
