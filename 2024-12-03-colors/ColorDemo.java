@@ -33,13 +33,21 @@ public class ColorDemo {
     // }
 
     // strobe lights
-    for (int num=0; num<100000; num++) {
-      for (int i=40; i<48; i++) {
-        System.out.println("\u001b[" + i + "m");
-        for (int j=0; j<1; j++) {
-          System.out.println();
-        }
-      }
+    // for (int num=0; num<100000; num++) {
+    //   for (int i=40; i<48; i++) {
+    //     System.out.println("\u001b[" + i + "m");
+    //     for (int j=0; j<1; j++) {
+    //       System.out.println();
+    //     }
+    //   }
+    // }
+
+    // checkerboard (or vertical stripes, depending on the terminal")
+    for (int i=0; i<1000; i++) {
+      System.out.print("\u001b[" + 40 + "m");
+      System.out.print(" ");
+      System.out.print("\u001b[" + 47 + "m");
+      System.out.print(" ");
     }
   }
 }
