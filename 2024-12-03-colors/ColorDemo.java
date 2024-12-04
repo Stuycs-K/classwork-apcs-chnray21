@@ -21,10 +21,15 @@ public class ColorDemo {
 
   // ---------------------------------------------
   public static void main(String[] args) {
-    printRgbText(0, 109, 209);
-    printRgbBackground(255, 255, 255);
-    System.out.println("Hello World");
-    resetText();
-    resetBackground();
+    // printRgbText(0, 109, 209);
+    // printRgbBackground(255, 255, 255);
+    // System.out.println("Hello World");
+    // resetText();
+    // resetBackground();
+
+    for (int i=30; i<38; i++) {
+      System.out.println("\u001b[" + i + "m");
+      System.out.println("Rainbow!");
+    }
   }
 }
