@@ -27,9 +27,19 @@ public class ColorDemo {
     // resetText();
     // resetBackground();
 
-    for (int i=30; i<38; i++) {
-      System.out.println("\u001b[" + i + "m");
-      System.out.println("Rainbow!");
+    // for (int i=30; i<38; i++) {
+    //   System.out.println("\u001b[" + i + "m");
+    //   System.out.println("Rainbow!");
+    // }
+
+    // strobe lights
+    for (int num=0; num<100000; num++) {
+      for (int i=40; i<48; i++) {
+        System.out.println("\u001b[" + i + "m");
+        for (int j=0; j<1; j++) {
+          System.out.println();
+        }
+      }
     }
   }
 }
