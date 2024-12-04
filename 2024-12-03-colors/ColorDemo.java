@@ -18,8 +18,10 @@ public class ColorDemo {
     System.out.print("\u001b[49m");
   }
 
+
+  // ---------------------------------------------
   public static void main(String[] args) {
-    printRgbText(255, 0, 255);
+    printRgbText(0, 109, 209);
     printRgbBackground(255, 255, 255);
     System.out.println("Hello World");
     resetText();
