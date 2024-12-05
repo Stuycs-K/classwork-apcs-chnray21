@@ -30,8 +30,17 @@ public class Driver {
     System.out.println(Text.RESET);
   }
 
+  public static int[] createRandomArray(int size) {
+    int[] result = new int[size];
+    for (int i = 0; i<size; i++) {
+      int num = (int)(1000*Math.random());
+      result[i] = num;
+    }
+    return result;
+  }
+
   public static void main(String[] args) {
-    makeBorder(Text.BLUE);
+    makeBorder(Text.RED);
 
   }
 }
