@@ -21,6 +21,12 @@ public class Driver {
       System.out.print("~");
     }
 
+    for (int i=1; i<29; i++) {
+      Text.color(Text.background(color));
+      Text.go(i, 0);
+      System.out.println("~");
+    }
+    
     System.out.println(Text.RESET);
   }
 
