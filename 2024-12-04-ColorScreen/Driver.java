@@ -47,7 +47,19 @@ public class Driver {
       }
     }
 
-    Text.color(Text.WHITE);
+    for (int i=2; i<80; i++) {
+      Text.go(3, i);
+      Text.color(color);
+      System.out.print("=");
+    }
+
+    Text.color(Text.ITALICS, Text.WHITE);
+    Text.go(14, 15);
+    System.out.print("In hoc enim fallimur, quod mortem prospicimus;");
+    Text.go(15, 15);
+    System.out.println("magna pars eius iam praeterit.");
+    Text.go(16, 30);
+    System.out.print("Quicquid aetatis retro est, mors tenet.");
     Text.go(31, 0);
     
     System.out.println(Text.RESET);
