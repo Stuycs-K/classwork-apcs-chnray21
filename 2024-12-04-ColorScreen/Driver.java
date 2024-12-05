@@ -17,18 +17,50 @@ public class Driver {
 
     for (int i=1; i<80; i++) {
       Text.color(Text.background(color));
-      Text.go(29, i);
+      Text.go(30, i);
       System.out.print("~");
     }
 
-    for (int i=1; i<29; i++) {
+    for (int i=1; i<30; i++) {
       Text.color(Text.background(color));
       Text.go(i, 0);
       System.out.println("~");
     }
+
+    Text.color(Text.background(Text.BLACK));
+    int[] nums = createRandomArray(3);
+    for (int i=1; i<4; i++) {
+      if (nums[i-1] < 25 ) {
+        Text.go(2, i+(20*i));
+        Text.color(Text.BRIGHT, Text.RED);
+        System.out.print(nums[i-1]);
+      }
+      else if (nums[i-1] > 75) {
+        Text.go(2, i+(20*i));
+        Text.color(Text.BRIGHT, Text.GREEN);
+        System.out.print(nums[i-1]);
+      }
+      else {
+        Text.go(2, i+(20*i));
+        Text.color(Text.WHITE);
+        System.out.print(nums[i-1]);
+      }
+    }
+
+    Text.color(Text.WHITE);
+    Text.go(31, 0);
     
     System.out.println(Text.RESET);
     
+  }
+
+  public static int[] createRandomArray(int size) {
+    int[] result = new int[size];
+    for (int i = 0; i<size; i++) {
+      int num = (int)(100*Math.random());
+      result[i] = num;
+    }
+    return result;
   }
 
   public static void main(String[] args) {
