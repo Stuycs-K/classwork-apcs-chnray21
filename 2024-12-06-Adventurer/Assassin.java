@@ -19,12 +19,12 @@ public class Assassin extends Adventurer {
 
   public String attack(Adventurer other) {
     other.setSpecial(other.getSpecial - 1);
-    return "Assassin stabbed "+other;
+    return "Assassin stabbed "+other.getName();
   }
 
   public String support(Adventurer other) {
     other.setHP(other.getHP()-1);
-    return "Assassin gave a healing potion to "+other;
+    return "Assassin gave a healing potion to "+other.getName();
   }
 
   public String support() {
@@ -35,6 +35,6 @@ public class Assassin extends Adventurer {
   public String specialAttack(Adventurer other) {
     other.setHP(other.getHP()-this.getSpecial());
     this.setSpecial(this.getSpecial()-2);
-    return "Assassin ambushed "+other;
+    return "Assassin ambushed "+other.getName();
   }
 }
