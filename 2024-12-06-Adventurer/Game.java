@@ -14,6 +14,7 @@ public class Game {
 
       System.out.println("Choose move: (a)ttack / (sp)ecial / (su)pport / quit");
       String move = userInput.nextLine();
+
       if (move == "a" || move == "attack") {
         System.out.println(player.attack(enemy));
       }
@@ -25,6 +26,15 @@ public class Game {
       }
       else if (move == "quit") {
         quit = true;
+        System.out.println("Quitting the game");
+      }
+      else {
+        System.out.println("Invalid input. Try again");
+        continue;
+      }
+
+      if (enemy.getHP() > 0) {
+
       }
     }
   }
