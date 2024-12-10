@@ -36,11 +36,13 @@ public class Assassin extends Adventurer {
 
   public String support(Adventurer other) {
     other.setHP(other.getHP()+2);
+    other.restoreSpecial(1);
     return this + " gave a healing potion to " + other + " to restore 2 HP";
   }
 
   public String support() {
     this.setHP(this.getHP()+2);
+    this.restoreSpecial(1);
     return this + " drank a healing potion for 2 HP";
   }
 
