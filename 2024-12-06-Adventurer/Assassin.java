@@ -2,7 +2,7 @@ public class Assassin extends Adventurer {
   private int crossbow, maxCapacity;
 
   public Assassin(String name) {
-    super(name, 15);
+    super(name, 12);
     crossbow = 1;
     maxCapacity = 4;
   }
@@ -31,7 +31,7 @@ public class Assassin extends Adventurer {
     int damage = (int)Math.random()*3+1;
     other.applyDamage(damage);
     restoreSpecial(1);
-    return this + " stabbed" + other + " for " + damage + " damage";
+    return this + " stabbed " + other + " for " + damage + " damage";
   }
 
   public String support(Adventurer other) {

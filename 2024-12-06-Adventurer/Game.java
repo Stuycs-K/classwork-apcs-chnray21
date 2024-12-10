@@ -6,12 +6,12 @@ public class Game {
     Adventurer enemy = new CodeWarrior();
 
     boolean quit = false;
+    Scanner userInput = new Scanner(System.in);
 
     while (!quit) {
       System.out.println("Player:  HP: " + player.getHP() + ", Special Resource: " + player.getSpecial());
       System.out.println("Enemy: HP: " + enemy.getHP() + ", Special Resource: " + player.getSpecial());
 
-      Scanner userInput = new Scanner(System.in);
       System.out.println("Choose move: (a)ttack / (sp)ecial / (su)pport / quit");
       String move = userInput.nextLine();
 
@@ -27,6 +27,7 @@ public class Game {
       else if (move.equals("quit")) {
         quit = true;
         System.out.println("Quitting the game");
+        break;
       }
       else {
         System.out.println("Invalid input. Try again");
@@ -54,7 +55,7 @@ public class Game {
         quit = true;
         System.out.println("Player lost!");
       }
-      userInput.close();
     }
+    userInput.close();
   }
 }
