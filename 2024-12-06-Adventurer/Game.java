@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Game {
   public static void main(String[] args) {
-    Adventurer player = new CodeWarrior();
+    Adventurer player = new Assassin();
     Adventurer enemy = new CodeWarrior();
 
     boolean quit = false;

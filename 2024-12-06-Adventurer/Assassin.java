@@ -7,6 +7,10 @@ public class Assassin extends Adventurer {
     maxCapacity = 4;
   }
 
+  public Assassin() {
+    this("Ezio");
+  }
+
   public String getSpecialName() {
     return "crossbow";
   }
