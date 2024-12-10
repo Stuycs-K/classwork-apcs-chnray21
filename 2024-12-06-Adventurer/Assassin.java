@@ -1,5 +1,3 @@
-import java.util.Random;
-
 public class Assassin extends Adventurer {
   private int crossbow, maxCapacity;
 
@@ -26,17 +24,18 @@ public class Assassin extends Adventurer {
   public String attack(Adventurer other) {
     int damage = (int)Math.random()*3+1;
     other.applyDamage(damage);
-    restoreSpecial(2);
+    restoreSpecial(1);
     return this + " stabbed" + other + " for " + damage + " damage";
   }
 
   public String support(Adventurer other) {
-    
+    other.setHP(other.getHP()+2);
+    return this + " gave a healing potion to " + other + " to restore 2 HP";
   }
 
   public String support() {
-    this.setHP(this.getHP()-1);
-    return "Assassin drank a healing potion";
+    this.setHP(this.getHP()+2);
+    return this + " drank a healing potion for 2 HP";
   }
 
   public String specialAttack(Adventurer other) {
