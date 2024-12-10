@@ -47,6 +47,12 @@ public class Game {
       }
       else {
         quit = true;
+        System.out.println("Player won!");
+      }
+
+      if (player.getHP() < 0) {
+        quit = true;
+        System.out.println("Player lost!");
       }
     }
 
