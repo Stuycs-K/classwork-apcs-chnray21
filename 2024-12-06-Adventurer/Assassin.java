@@ -47,7 +47,7 @@ public class Assassin extends Adventurer {
   }
 
   public String specialAttack(Adventurer other) {
-    int damage = (int)(Math.random()*(3+crossbow))+2;
+    int damage = (int)(Math.random()*(1+crossbow)) + (int)(Math.random()*(2+crossbow)) +2;
     other.applyDamage(damage);
     int temp = crossbow;
     setSpecial(0);
