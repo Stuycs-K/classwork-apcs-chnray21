@@ -34,8 +34,22 @@ public class Game {
       }
 
       if (enemy.getHP() > 0) {
-
+        int chooser = (int)Math.random()*3+1;
+        if (chooser == 1) {
+          System.out.println(enemy.attack(player));
+        }
+        else if (chooser == 2) {
+          System.out.println(enemy.specialAttack(player));
+        }
+        else if (chooser == 3 ) {
+          System.out.println(enemy.support());
+        }
+      }
+      else {
+        quit = true;
       }
     }
+
+    userInput.close();
   }
 }
