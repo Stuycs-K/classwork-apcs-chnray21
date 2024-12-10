@@ -28,7 +28,7 @@ public class Assassin extends Adventurer {
   }
 
   public String attack(Adventurer other) {
-    int damage = (int)Math.random()*3+1;
+    int damage = (int)Math.random()*5+1;
     other.applyDamage(damage);
     restoreSpecial(1);
     return this + " stabbed " + other + " for " + damage + " damage";
@@ -47,7 +47,7 @@ public class Assassin extends Adventurer {
   }
 
   public String specialAttack(Adventurer other) {
-    int damage = (int)Math.random()*(3+crossbow)+1;
+    int damage = (int)Math.random()*(3+crossbow)+2;
     other.applyDamage(damage);
     int temp = crossbow;
     setSpecial(0);
