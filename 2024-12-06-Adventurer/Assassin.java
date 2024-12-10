@@ -3,6 +3,8 @@ public class Assassin extends Adventurer {
 
   public Assassin(String name) {
     super(name, 15);
+    crossbow = 1;
+    maxCapacity = 4;
   }
 
   public String getSpecialName() {
@@ -39,8 +41,10 @@ public class Assassin extends Adventurer {
   }
 
   public String specialAttack(Adventurer other) {
-    other.setHP(other.getHP()-this.getSpecial());
-    this.setSpecial(this.getSpecial()-2);
-    return "Assassin ambushed "+other.getName();
+    int damage = (int)Math.random()*(3+crossbow)+1;
+    other.applyDamage(damage);
+    int temp = crossbow;
+    setSpecial(0);
+    return this + " used " + temp + " arrows to deal " + damage + " damage to " + other;
   }
 }
