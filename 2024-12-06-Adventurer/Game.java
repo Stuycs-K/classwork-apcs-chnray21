@@ -62,7 +62,7 @@ public class Game {
         System.out.println(" ");
       }
 
-      if (player.getHP() < 0) {
+      if (player.getHP() <= 0) {
         quit = true;
         System.out.println("Player lost!");
         System.out.println(" ");
