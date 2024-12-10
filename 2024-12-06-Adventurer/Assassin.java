@@ -1,30 +1,37 @@
+import java.util.Random;
+
 public class Assassin extends Adventurer {
-  private int accuracy, maxAccuracy;
+  private int crossbow, maxCapacity;
+
+  public Assassin(String name) {
+    super(name, 15);
+  }
 
   public String getSpecialName() {
-    return "Assassin";
+    return "crossbow";
   }
 
   public int getSpecial() {
-    return accuracy;
+    return crossbow;
   }
 
   public void setSpecial(int n) {
-    accuracy=n;
+    crossbow=n;
   }
 
-  public int getSpecialMax {
-    return maxAccuracy;
+  public int getSpecialMax() {
+    return maxCapacity;
   }
 
   public String attack(Adventurer other) {
-    other.setSpecial(other.getSpecial - 1);
-    return "Assassin stabbed "+other.getName();
+    int damage = (int)Math.random()*3+1;
+    other.applyDamage(damage);
+    restoreSpecial(2);
+    return this + " stabbed" + other + " for " + damage + " damage";
   }
 
   public String support(Adventurer other) {
-    other.setHP(other.getHP()-1);
-    return "Assassin gave a healing potion to "+other.getName();
+    
   }
 
   public String support() {
