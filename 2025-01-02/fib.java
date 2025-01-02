@@ -11,7 +11,6 @@ public class fib {
   }
 
   public static void main(String[] args) {
-    System.out.println(8 == fib(6));
-    System.out.println(13 == fib(7));
+    fib(46);
   }
 }
