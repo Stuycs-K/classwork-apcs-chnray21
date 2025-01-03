@@ -8,6 +8,7 @@ public class makeWords {
       remainingLetters--;
       for (int i=1; i<alphabet.length(); i++) {
         result+=alphabet.substring(i-1, i);
+        makeWords(remainingLetters, result, alphabet);
       }
     }
   }
